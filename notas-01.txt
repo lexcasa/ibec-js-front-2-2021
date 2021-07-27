@@ -1,0 +1,251 @@
+Startups
+Proceso de selección: 
+
+- Desafío: 
+	- Crear una aplicación: 
+		- WebApp
+		- Backend
+	- Ing. de software
+	- Algoritmos y est. de datos
+
+- Prueba técnica
+	- Screening
+		- Ing. de software
+		- AE de datos
+		- Cont. y control de riesgos
+
+- CFO se hace la propuesta economica
+- CEO de la empresa
+
+---- 
+
+Cual es el CV del programador: github.com
+
+ - Perfil
+ - Manejar los repositorios de forma pública
+ - github.com/lexcasa
+
+---
+
+FUNDAMENTOS DE JS:
+
+	1. Def. de variables y tipos
+	2. Lógica
+	3. Iteraciones y control de flujo
+	4. Métodos y est. de datos
+
+	Referencia: https://www.w3schools.com/js/default.asp
+
+JavaScript: 
+
+	- Lenguaje de scripting que corre en un navegador o en un servidor
+		- Navegador es Javascript de frontend 
+		- Servidor correr en NodeJS/ JS de backend
+
+	- FrontEnd: Navegador, index.html (o archivo html) donde vamos a vincular un 
+	Script de JS
+
+	- Setup inicial 
+	- Consola: 
+		- F12 ó clic derecho "inspeccionar elemento"
+
+
+OBS: Una vez que tengo el setup inical - puedo empezar con los fundamentos
+
+
+1. DEF. DE VARIABLES Y TIPOS
+
+
+¿Que es una variable?
+	
+Def:
+	- Carga valor (Si, por que el proposito es almacenar datos)
+	- Le doy nombre a "algo" que quiero almacenar al ejecutar un programa
+	- Reservo memoria para almacenar
+
+	---
+	- Que sea estático o dinámico (no es fundamental)
+
+¿Que es el tipo?
+
+	- Si va a ser numero, letra, etc
+	- Clasificar los datos que estoy almacenando
+
+
+- Procedimiento: 
+	- Definimos una variable y le asignamos un tipo de datos
+	- Como JavaScript es de tipado dinámico, quiere decir que vamos a tipar asignando el valor
+	de la variable
+
+	EJEMPLO: 
+
+		let num = 10 
+
+		--> Yo se que es un int (entero)
+
+		let num2 = 10.12 
+
+		--> Yo se que es un float (decimal) por los decimales 
+
+
+		let verdadero = true // false
+
+		--> Tipo boolean
+
+
+		let nombre = "Alex"
+
+		--> Tipo string
+
+
+ FORMAS DE DEFINIR UNA VARIABLE: 
+
+ 	let, const, var 
+
+
+ 	* const no se puede redefinir el valor pre-fijado
+
+ 	Cual es la diferencia entre let y var?
+
+ 	let: asignacion block-scoped
+
+
+ 	if(cond){
+ 		let nombre = "Alex"
+ 		...
+ 	}
+
+ 	nombre? - indefinida
+
+
+2. LOGICA
+
+PREGUNTA DE CONTEXTO: 
+
+- Donde vivis?
+	- Montevideo, Uruguay
+
+
+PREGUNTAS A LA MAQUINA:
+
+	- Todas derivan en verdadero o falso, [0, 1]
+
+
+EJEMPLO: 
+	- Sitio web que debe verificar si el usuario es mayor de edad o no.
+
+	- Determinar cual es la mayoria de edad para la web
+	- Como determino si el usuario es mayor de edad o no
+
+	IF, ELSE - Est. de control
+
+	Condicionales logicas: 
+
+	- Son variables que dada una pregunta logica me va a derivar en true o false
+
+
+	Dos tipos de formas de preguntar: 
+		- Comparadores aritmeticos
+		- Comparadores logicos
+
+	Comparadores aritmeticos: 
+
+		A > B
+		B < A
+		A >= B
+		A <= B
+		A == B
+		A != B
+
+		Donde A, B son int o float 
+
+		let a = 10
+		let b = 15
+
+		let cond1 = a > b
+
+		cond1? Es false
+
+	Comparadores logicos:
+
+		Op. logicos:
+
+			AND: &&, 
+			OR: ||, 
+			NOT: !=, 
+			EQ: ==, 
+			DISTINTO: !==, 
+			IDENTICO: ===
+
+		let cond2 = true && cond1
+
+		cond2? false
+
+		let cond3 = true || cond1
+
+		cond3? true
+
+		COND. AND: 
+			- Una cadena de condicionales por el operador && es verdadera si todos los 
+			valores de la cadena son verdaderos
+
+				let condN = cond1 && cond2 && ... && condN1
+
+			- Si existe por lo menos un valor en la cadena que es falso toda la cadena es
+			falsa
+
+		COND. OR:
+			- Una cadena de cond. por el operador || es verdadera si por lo menos un elemento
+			de la cadena es verdadero
+
+
+				let condN = cond1 || cond2 || ... || condN1
+
+			- La cadena es falsa si todos los elementos de la cadena son falsos
+
+
+		IDENTICO:
+
+		SI A === B es true si y solo si A y B son del mismo valor y tipo.
+
+		DISTINTO: 
+
+		SI A !== B es true si por lo menos el valor o tipo son distintos
+
+
+Iteraciones y control de flujo
+
+Iteraciones: Recorrer una estructura de datos
+	- Array 
+	- Objeto
+
+	for, while, foreach, map ...
+
+	[for] 
+
+		- indice
+		- cond de corte
+		- paso (como crece)
+
+    - Recorre (puede recorrer) una estructura de forma lineal
+
+    array: [1,2,3, 5, 12]
+
+    let arr = [1,2,3,5,12]
+
+    - Cuantos elementos tiene la variable "arr"? 5
+    - Cuantas pos. tiene la variable "arr"? 0, ..., 4
+
+    let i = 0, ..., 4
+    cond corte? 
+    	< largo del arr
+    paso: 
+    	i++
+
+
+    Recorrer un objeto: https://www.w3schools.com/js/js_loop_forin.asp
+
+    TAREA: 
+
+    	- Revisar documentacion w3school: https://www.w3schools.com/js/default.asp
+    	- Hacer ejercicios hasta objetos: https://www.w3schools.com/js/exercise_js.asp?filename=exercise_js_variables1

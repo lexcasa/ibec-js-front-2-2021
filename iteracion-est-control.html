@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		let arr = [1,2,4,5,12]
+
+		for (let i = 0; i < arr.length; i++){
+			// arr[0] - 1
+			// arr[1] - 2
+			// arr[2] - 4
+			// arr[3] - 5
+			// arr[4] - 12
+			console.log("elemento: ", arr[i] )
+		}
+
+		// Recorrer un objeto
+		let persona = {
+			nombre: "Alex",
+			apellido: "Casadevall",
+			edad: 29
+		}
+
+		// Recorrer un objeto linealmente por sus propiedades
+		for (let key in persona){
+			// persona["nombre"]   - Alex
+			// persona["apellido"] - Casadevall 
+			// persona["edad"] 	   - 29
+			// console.log("Valor: ", persona[key])
+
+			if(key == "edad"){
+				console.log("La edad es: ", persona[key])
+			} else {
+				console.log("No es edad.")
+			}
+		}
+	</script>
+</body>
+</html>
