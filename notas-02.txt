@@ -1,0 +1,203 @@
+FUNDAMENTOS DE JS:
+
+	1. Def. de variables y tipos
+	2. Lógica
+	3. Iteraciones y control de flujo
+	4. Métodos y est. de datos
+
+
+MÉTODOS Y EST. DE DATOS
+
+
+ - Métodos: Básicamente son funciones: 
+ 	- Dos tipos: 
+ 		- Funciones con retorno
+ 			- Procesa una serie de instrucciones (puede ser una sola linea)
+ 			- Nos devuelve un resultado almacenable
+
+ 		- Funciones de ejecución
+ 			- Procesa una serie de instrucciones (puede ser una sola linea)
+ 			- No devuelve un resultado almacenable
+
+
+ 	FUNCIONES CON RETORNO: 
+
+ 		- f(x) = x + 1  - lambda function
+
+ 		- para cada valor de "x", f(x) tiene un falor determinado
+ 		- si x = 1
+ 		- Entonces f(1) = 1 + 1
+ 		- Donde f(1) = 2
+
+ 		let landa_x = function (x){
+ 			return x + 1
+ 		}
+ 		let f1 = landa_x(1)
+
+ 		console.log("Valor de x si x es 1: ", f1)
+
+ 	FUNCIONES DE EJECUCION: 
+
+ 		- Definimos una funcion que le paso el nombre de una persona y muestro en consola
+ 		el nombre de esa persona.
+
+ 		let muestraNombre = function (nombre){
+ 			console.log("El nombre es: ", nombre)
+ 		}
+
+ 		let nombre = muestraNombre("Alex")
+ 		nombre -> Va a estar indefinido: undefined 
+
+
+EST. DE DATOS: 
+
+	- Objetos
+	- Arrays
+
+	- Objetos: La manera de abstraer la realidad a un modelo de datos.
+
+	Persona: 
+		- Nombre
+		- Edad 
+		- Email
+
+	let persona = {
+		nombre: "Alex",
+		edad: 29,
+		email: "lexcasa@gmail.com"
+	}
+
+	propiedades y valores
+	 -> propiedad: valor
+
+	 -> Propiedad: El nombre debe estar contenido en los caracteres alfanumericos
+	 |	-> Sin espacios y caracteres especiales
+
+	 nombreCompleto: "Alex Casadevall" (camelCase) (OK)
+
+	 nombre_completo: "Alex Casadevall" (snake) (OK)
+
+	 nombre completo: "Alex Casadevall" (x)
+
+	 nombre#completo: "Alex Casadevall" (x)
+
+	 --- 
+
+
+	 Valor: 
+
+	 	- Los tipos de datos que tiene el valor son todos los tipos de datos soportados
+	 	por JS
+
+
+	 	let producto = {
+	 		categoria: {...},
+	 		nombre: "Manzana"
+	 	}
+
+	Arrays: es una coleccion de elementos o un vector de elementos
+		- Esos elementos pueden ser datos de cualquier tipo soportado en JS
+		- Incluso est. de datos: arrays, objs
+
+		let productos = ["Manzana","Banana","Pera"]
+
+		- Los elementos en un array pueden ser mixtos
+
+		let productosNum = ["Manzana", 1, 10, "Banana"]
+
+	-----
+
+
+	APLICACION DE LOS FUNDAMENTOS DE JS
+
+		- Construir un sitio web: 
+
+			- Verifique la edad de la persona
+			- Verifique si esta vacunado 
+
+			- Te va habilitar entrar a la pagina si: 
+				- Es mayor de edad 
+				- Esta vacunado
+
+			- Caso no se cumpla
+				- Desplegar un error
+
+		- UI: El usuario tiene que tener una forma de ingresar su edad
+		- UI: Tiene que poder marcar si esta vacunado o no a traves de un checkbox
+
+	
+	- VISTA: HTML/CSS (OK)
+	- LOGICA: COMO VA FUNCIONAR LA APLICACION (OK)
+	- INTEGRACION: Como el usuario interactua con la vista y la logica
+
+
+	- COMO se comunica el HTML/CSS con el JS? 
+
+	- Pregunta: Puedo obtener etiquetas de HTML dentro de JS?
+
+		- SI, atraves del DOM
+			- document (html) object model
+			- a traves del objeto: document
+			- ejemplo: let dom = document 
+
+	- Pregunta 2: Puedo manipular los valores de una etiqueta?
+
+		- SI, pero se manipula de forma diferente: 
+			- Entender que tipo de etiqueta estoy manipulando:
+
+				- Etq. estructura
+					
+					- h2
+					- p
+					- div
+					- form 
+
+				- Etq. lectura/escritura
+
+					- input
+					- textarea
+
+		Como manipulo los valores Etq. estructura?
+
+			1. Obtener la etiqueta dentro del html
+			2. Verificar que estamos obteniendo bien
+			3. Formas: 
+				- Obtener/modificar el texto interno
+				- Obtener/modificar el html interno
+				- Obtener/modificar todo el html de esa etq.
+
+		EJEMPLO: En mi aplicacion quiero cambiar el texto del h2 que dice: "Sitio web"
+		para "Aplicacion Web"
+		- En tiempo de ejecucion: 
+
+			t=0 html/css 
+			t=1 evaluo los scripts de js y cargo el DOM
+			t=2 ejecuto eventos/funciones en tiempo de ejecucion
+			...
+
+		Como manipulo los valores Etq. lectura/escritura?
+
+			1. Obtener la etiqueta dentro del html
+			2. Verificar que estamos obteniendo bien
+			3. Formas: 
+				- Obtener/modificar el valor
+
+	- Como disparo una funcion de JS desde el HTML? 
+
+		- Lo hacemos a traves de los eventos: 
+
+			- onclick: Disparo una funcion cuando el usuario ejecute el clic
+			en el elemnto HTML
+
+
+ 	LINEA DE TIEMPO:
+
+ 	t=0 html/css 
+	t=1 evaluo los scripts de js y cargo el DOM
+	t=2 ejecuto eventos/funciones en tiempo de ejecucion
+	...
+
+	t=i eventos (tiempo indeterminado)
+		t=i + 1
+		t=i + 2
+		...

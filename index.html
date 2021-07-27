@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2 class="titular" id="titulo">Sitio web</h2>
+	<form>
+		<input type="number" name="edad" id="edad" placeholder="Ingresar edad">
+		<br>
+		<label>Esta vacunado?</label>
+		<input type="checkbox" name="vacunado" id="vacunado">
+		<hr>
+		<button type="button" onclick="verificaIngresoVisitante()">Ingresar</button>
+	</form>
+	<script type="text/javascript">
+		const MAYOR_EDAD = 18
+
+		let verificaIngreso = function (edad, esVacunado) {
+			if(edad >= MAYOR_EDAD && esVacunado == true){
+				return true // Esta habilitado a ingresar a la pagina
+			}
+			return false // por defecto no ingresa
+		}
+		// Test de combinaciones
+		// Combinacion: Si es mayor de edad y esta vacunado
+		console.log("TEST: Si es mayor de edad y esta vacunado: ", verificaIngreso(18, true))
+
+		// Combinacion: Si es menor de edad y esta vacunado
+		console.log("TEST: Si es menor de edad y esta vacunado: ", verificaIngreso(17, true))
+
+		// Combinacion: Si es mayor de edad y no esta vacunado
+		console.log("TEST: Si es mayor de edad y no esta vacunado: ", verificaIngreso(18, false))
+
+
+		// Ejemplo: En mi aplicacion quiero cambiar el texto del h2 que dice: "Sitio web"
+		// para "Aplicacion Web"
+
+		// 1. Obtengo la etiqueta h2 dentro del js
+		let h2 = document.querySelector("h2")
+
+		// dos tipos de querySelector:
+			// document.querySelector("h2") -> Puede ir: nombre etiqueta, clase: .titular o id
+			// #titulo
+			// Nos devuelve un elemento solo
+			// document.querySelectorAll("li") -> Misma regla del querySelector anterior
+			// pero devuelve un array
+
+		// 2. Verificar que estamos obteniendo bien
+		console.log("verificar h2: ", h2)
+
+		let textoNuevo = "Aplicacion Web"
+		let h2Texto    = h2.innerText; // Obteniendo datos
+
+		console.log("verificar texto del h2: ", h2Texto)
+
+		// Insertar datos al texto del h2
+		h2.innerText = textoNuevo
+
+		let edad = document.querySelector("#edad")
+		let vacunado = document.querySelector("#vacunado")
+
+		console.log("Verifico las etq. I/O: ", edad, vacunado)
+
+		let edadValor 	  = edad.value // Devuelve el valor del input
+		let vacunadoValor = vacunado.checked // Me devuelve true / false dependiendo de si esta
+		// chequeado o no el input
+
+		console.log("Verifico valores etq. I/O: ", edadValor, vacunadoValor)
+
+		let verificaIngresoVisitante = function (){
+			let eValor = edad.value
+			let vValor = vacunado.checked
+
+			let ingresa = verificaIngreso(eValor, vValor)
+
+			if(ingresa){
+				alert("Usuario habilitado para ingresar")
+			} else {
+				alert("Error al ingresar. Usuario no habilitado")
+			}
+
+			console.log("Funciona!")
+		}
+	</script>
+</body>
+</html>
