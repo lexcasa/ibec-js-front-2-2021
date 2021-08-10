@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form>
+		<input type="text" name="" placeholder="Usuario" id="usuario">
+		<br>
+		<input type="password" name="" placeholder="Clave" id="clave">
+		<button id="toggleClave" type="button" onclick="verOcultarClave()">Ver clave</button>
+		<br>
+		<button  type="button">Ingresar</button>
+	</form>
+	<script type="text/javascript">
+		let usuario = document.querySelector('#usuario')
+		let clave 	= document.querySelector('#clave')
+
+
+		let verOcultarClave = function () {
+			clave.type = "text"
+		}
+	</script>
+</body>
+</html>
