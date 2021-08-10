@@ -128,7 +128,7 @@ EST. DE DATOS:
 	
 	- VISTA: HTML/CSS (OK)
 	- LOGICA: COMO VA FUNCIONAR LA APLICACION (OK)
-	- INTEGRACION: Como el usuario interactua con la vista y la logica
+	- INTEGRACION: Como el usuario interactua con la vista y la logica (OK)
 
 
 	- COMO se comunica el HTML/CSS con el JS? 
@@ -145,7 +145,7 @@ EST. DE DATOS:
 		- SI, pero se manipula de forma diferente: 
 			- Entender que tipo de etiqueta estoy manipulando:
 
-				- Etq. estructura
+				- Etq. estructura <tag> ... </tag>
 					
 					- h2
 					- p
@@ -181,13 +181,14 @@ EST. DE DATOS:
 			2. Verificar que estamos obteniendo bien
 			3. Formas: 
 				- Obtener/modificar el valor
+				- Obtener/modificar un atributo
 
 	- Como disparo una funcion de JS desde el HTML? 
 
 		- Lo hacemos a traves de los eventos: 
 
 			- onclick: Disparo una funcion cuando el usuario ejecute el clic
-			en el elemnto HTML
+			en la etiqueta HTML
 
 
  	LINEA DE TIEMPO:

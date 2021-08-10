@@ -4,15 +4,25 @@
 	<title></title>
 </head>
 <body>
-	<h2 class="titular" id="titulo">Sitio web</h2>
-	<form>
-		<input type="number" name="edad" id="edad" placeholder="Ingresar edad">
-		<br>
-		<label>Esta vacunado?</label>
-		<input type="checkbox" name="vacunado" id="vacunado">
-		<hr>
-		<button type="button" onclick="verificaIngresoVisitante()">Ingresar</button>
-	</form>
+	<!-- VISTA -->
+		
+		<!-- CASO EJEMPLO -->
+		<h2 class="titular" id="titulo">Sitio web Dos</h2>
+		<!--  
+			Etiqueta: caso general - puedo tener N h2 en todo mi HTML
+				- Identifico la posicion de ese h2 y manipulo el valor que quiera 
+				- Puedo tener un solo h2 en el HTML y es el unico que voy a manipular
+			---
+		-->
+		<form>
+			<input type="number" name="edad" id="edad" placeholder="Ingresar edad">
+			<br>
+			<label>Esta vacunado?</label>
+			<input type="checkbox" name="vacunado" id="vacunado" disabled="">
+			<hr>
+			<button type="button" onclick="verificaIngresoVisitante()">Ingresar</button>
+		</form>
+	<!-- VISTA -->
 	<script type="text/javascript">
 		const MAYOR_EDAD = 18
 
@@ -68,6 +78,7 @@
 
 		console.log("Verifico valores etq. I/O: ", edadValor, vacunadoValor)
 
+		// t = i
 		let verificaIngresoVisitante = function (){
 			let eValor = edad.value
 			let vValor = vacunado.checked

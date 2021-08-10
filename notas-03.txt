@@ -1,0 +1,37 @@
+EJERCICIOS RAPIDOS: 
+
+	1. Tenemos una etiqueta h1 que tiene el valor: "Hola Mundo": 
+		<h1>Hola Mundo</h1>
+
+		1.a) Al cargar la pagina que el h1 se modifique con el texto: "Hola!" (X)
+		1.b) Al cargar la pagina que el h1 se modifique con el texto: "Hola Mundo: Nombre"
+			- Donde "Hola Mundo" se extrae del propio h1
+			- El texto "Nombre" esta cargado en una variable
+  	--- 
+
+  	2. Tenemos una etiqueta input type=text 
+  		<input type="text">
+
+  		2.a) Cargar el valor por defecto "Hola Mundo!" (x)
+  		2.b) Cambiar dinamicamente el type por checkbox en tiempo de ejecucion (X)
+  		2.c) Que el checkbox quede deshabilitado
+
+  		OBS: Todas las acciones cuando cargo la pagina
+
+  	--- 
+
+  	3. Tenemos un formulario con dos campos: 
+  		- Usuario: input type text 
+  		- Clave: input type password
+  		- Ingresar: button 
+
+  		3.a) Agregar un boton al lado de clave "Ver clave"
+  			3.a.a) Que al dar clic muestre la clave escrita en el input
+  			3.a.b) Cambie el texto del boton "Ver clave" por "Ocultar clave"
+  			3.a.c) Controlar que si di clic que "Oculte la clave" 
+  				  que se reinice el funcionamiento
+
+  		3.b) Verificar si el usuario es: admin desplegar un mensaje:
+  			- "No se puede ingresar con administrador"
+
+  		3.c) Verificar que los campos Usuario y clave no esten vacios

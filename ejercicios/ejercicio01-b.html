@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Hola Mundo</h1>
+	<script type="text/javascript">
+		let nombre = "Alex"
+		let h1 	= document.querySelector('h1')
+
+		let textoResultante = h1.innerText + ": " + nombre
+
+		// Siempre verificar la etiqueta que este llegando
+		// correctamente
+		console.log("h1: ", h1)
+
+		// h1.innerText = textoResultante
+		h1.innerText += ": " + nombre
+	</script>
+</body>
+</html>
