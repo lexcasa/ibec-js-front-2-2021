@@ -25,13 +25,42 @@ EJERCICIOS RAPIDOS:
   		- Clave: input type password
   		- Ingresar: button 
 
-  		3.a) Agregar un boton al lado de clave "Ver clave"
-  			3.a.a) Que al dar clic muestre la clave escrita en el input
-  			3.a.b) Cambie el texto del boton "Ver clave" por "Ocultar clave"
-  			3.a.c) Controlar que si di clic que "Oculte la clave" 
+  		3.a) Agregar un boton al lado de clave "Ver clave" (x)
+  			3.a.a) Que al dar clic muestre la clave escrita en el input (x)
+  			3.a.b) Cambie el texto del boton "Ver clave" por "Ocultar clave" (x)
+  			3.a.c) Controlar que si di clic que "Oculte la clave" (x)
   				  que se reinice el funcionamiento
 
-  		3.b) Verificar si el usuario es: admin desplegar un mensaje:
+  		3.b) Verificar si el usuario es: admin desplegar un mensaje: (x)
   			- "No se puede ingresar con administrador"
 
-  		3.c) Verificar que los campos Usuario y clave no esten vacios
+  		3.c) Verificar que los campos Usuario y clave no esten vacios (x)
+
+  --- 
+
+    4. Crear una To-Do list
+      [ Input ] [ Agregar ]
+
+        * Item 1 [ eliminar ]
+        * Item 2 [ eliminar ]
+        ...
+
+      [ Borrar todos ]
+
+      4.a) 
+        - El texto que escriba en el input al dar clic en "agregar" que agregue a una lista
+        tipo ul, li (x)
+
+      4.b)
+
+        - A los items agregados a la lista que se eliminar presionando el boton "eliminar" (x)
+
+      4.c)
+
+        - Al dar clic en "Borrar todos" eliminamos todos los items de la lista (x)
+
+      4.d)
+
+        - Controles: no se pueden ingresar items repetidos
+
+---

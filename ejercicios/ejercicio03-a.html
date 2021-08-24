@@ -10,15 +10,39 @@
 		<input type="password" name="" placeholder="Clave" id="clave">
 		<button id="toggleClave" type="button" onclick="verOcultarClave()">Ver clave</button>
 		<br>
-		<button  type="button">Ingresar</button>
+		<button type="button" onclick="submitIngresar()">Ingresar</button>
 	</form>
 	<script type="text/javascript">
 		let usuario = document.querySelector('#usuario')
 		let clave 	= document.querySelector('#clave')
+		let btn 	= document.querySelector('#toggleClave')
+
+		const VERIFICAR_ADMIN = "admin"
 
 
 		let verOcultarClave = function () {
-			clave.type = "text"
+			// Estado inicial
+			if(clave.type == "password"){
+				// Estado final
+				clave.type = "text"
+				btn.innerText = "Ocultar clave"
+			} else {
+				clave.type = "password"
+				btn.innerText = "Ver clave"
+			}
+		}
+
+		let submitIngresar = function (){
+			if(usuario.value == VERIFICAR_ADMIN){
+				alert("No se puede ingresar con administrador")
+				return
+			}
+			if(usuario.value.trim().length == 0 || clave.value.trim().length == 0){
+				alert("Usuario y/o clave no pueden ser vacios.")
+				return
+			}
+
+			alert("Usuario se ingreso correctamente")
 		}
 	</script>
 </body>

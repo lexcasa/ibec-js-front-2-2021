@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form>
+		<input type="text" name="" id="texto">
+		<button type="button" onclick="agregarItem()">Agregar</button>
+		<hr>
+		<ul id="todo-list"></ul>
+		<hr>
+		<button type="button" onclick="eliminarAllItems()">Borrar todos</button>
+	</form>
+	<script type="text/javascript">
+		let texto 	 = document.querySelector("#texto")
+		let toDoList = document.querySelector("#todo-list")
+
+		let count = 0
+		let items = []
+
+		let agregarItem = function () {
+			let txt = texto.value 
+
+			if(!items.includes(txt)){
+				items.push(txt)
+				
+				// item-0
+				let tpl = `<li id="item-${count}">${txt} <button type="button" onclick="eliminarItem(${count})">Eliminar </button></li>`
+				toDoList.innerHTML += tpl
+				count++
+			}
+		}
+
+		let eliminarItem = function (indice){
+			document.querySelector("#item-" + indice).outerHTML = ''
+		}
+
+		let eliminarAllItems = function (){
+			toDoList.innerHTML = ''
+		}
+
+	</script>
+</body>
+</html>
