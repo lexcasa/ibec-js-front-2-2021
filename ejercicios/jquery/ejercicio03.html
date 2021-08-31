@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Agregar la CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<form>
+		<input type="text" name="" id="usuario">
+		<br>
+		<input type="password" name="" id="clave">
+		<button type="button" id="toggleClave">Ver clave</button>
+		<br>
+		<button type="button" id="ingreso">Ingresar</button>
+	</form>
+	<script type="text/javascript">
+		let usuario = $("#usuario")
+		let clave 	= $("#clave")
+
+		$("#toggleClave").click( function () {
+			if(clave.attr("type") == "password"){
+				clave.attr("type", "text")
+				$(this).text("Ocultar clave")
+			} else {
+				clave.attr("type", "password")
+				$(this).text("Ver clave")
+			}
+		})
+
+		$("#ingreso").click( function (){
+			if(usuario.val() == "admin"){
+				alert("No se puede ingresar con administrador");
+				return
+			}
+
+			if(usuario.val().trim().length == 0 || clave.val().trim().length == 0){
+				alert("Usuario y/o clave vacios");
+				return
+			}
+		})
+	</script>
+</body>
+</html>

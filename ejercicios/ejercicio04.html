@@ -26,18 +26,29 @@
 				items.push(txt)
 				
 				// item-0
-				let tpl = `<li id="item-${count}">${txt} <button type="button" onclick="eliminarItem(${count})">Eliminar </button></li>`
+				let tpl = `<li id="item-${count}"><span>${txt}</span> <button type="button" onclick="eliminarItem(${count})">Eliminar </button></li>`
 				toDoList.innerHTML += tpl
 				count++
 			}
 		}
 
 		let eliminarItem = function (indice){
+			let texto = document.querySelector("#item-" + indice + " span").innerText;
+
+			console.log("texto: ", texto)
 			document.querySelector("#item-" + indice).outerHTML = ''
+			
+			for (let i = 0; i < items.length; i++){
+				if(items[i] == texto){
+					items.splice(i, 1)
+					return
+				}
+			}
 		}
 
 		let eliminarAllItems = function (){
 			toDoList.innerHTML = ''
+			items = []
 		}
 
 	</script>

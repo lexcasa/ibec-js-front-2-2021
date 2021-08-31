@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Agregar la CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<form>
+		<input type="text" name="" id="texto">
+		<button type="button" id="agregarItem">Agregar</button>
+		<hr>
+		<ul id="todo-list"></ul>
+		<hr>
+		<button type="button" id="borrarTodosItems">Borrar todos</button>
+	</form>
+	<script type="text/javascript">
+		let textoInput = $("#texto")
+		let toDoList   = $("#todo-list")
+
+		$("#agregarItem").click( function () {
+			let texto = textoInput.val()
+			let tpl   = `
+				<li><span>${texto}</span> <button type="button">Eliminar</button></li>
+			`
+			toDoList.append(tpl)
+		})
+	</script>
+</body>
+</html>

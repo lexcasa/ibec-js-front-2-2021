@@ -1,0 +1,101 @@
+jQuery: 
+
+	- jQuery es una libreria
+	- Simplificar el desarrollo en JavaScript
+	- La vamos a incluir a traves de una CDN
+		- Content delivery network
+
+
+	Mini CRUD - EJERCICIO 05: 
+		- Create, Read, Update, Delete
+		- Model: Personas
+			- {nombre, apellido, edad}
+
+		- Formulario: 
+			- Inputs: nombre, apellido, edad
+
+		- Damos de alta los datos
+		- Guardamos en memoria: un array
+		- Listamos los datos en una tabla
+		- Dos acciones: 
+			- Editar
+				- Seleccionamos el elemento del array
+				- Cargamos ese item en el formulario
+
+			- Eliminar
+				- Eliminamos el elemento del array
+
+
+		Javascript Vanilla					 jQuery
+
+	-> document.querySelector("...") 	-> 	$("...")
+
+
+	EJEMPLO 1: 
+
+		- Obtener el texto de una etiqueta "p"
+
+		JS Vanilla: 
+			document.querySelector("p").innerText
+
+		jQuery:
+			$("p").text()
+
+
+		GETTER / SETTER
+
+		GETTER: de obtener el texto de la etiqueta "p": $("p").text()
+		SETTER: para asignar el texto a la etq. "p": $("p").text("Hola!")
+
+
+	MANEJO DE EVENTOS: 
+
+		- onclick 
+			-> Lo definimos en el HTML
+
+		- Evento: 
+			$().eventName( callback )
+
+		EJEMPLO 2: 
+			- Quiero cambiar el texto de una etiqueta "p" mediante el clic en un boton
+			
+			<p>Alex</p>
+
+			$("p").click( function (){
+				$("p").text("Hola!")
+			})
+
+		EJEMPLO 3: 
+
+			- Tengo varios "p" y quiero modificar solo el que le di clic
+
+				<p>Hola I</p>
+				<p>Hola II</p>
+				<p>Hola III</p>
+
+				$("p").click( function (){
+					$(this).text("Hola!")
+				})
+
+
+		EJEMPLO 4: 
+
+		Etq. de INPUT: 
+			- Manipular las propiedades
+			- Obtener/Setear valor
+
+			<input id="nombre">
+
+			$("#nombre").val() 		 -> Obtiene el valor
+			$("#nombre").val("Alex") -> Seteo el valor
+
+
+			<input type="text"> ----> <input type="password">
+
+			Si estaba type="text" --> $("input").attr("type", "password")
+
+			<input type="checkbox">
+
+				-> Verificamos la .prop('checked')
+
+				let activo = $("input").prop("checked") -> true / false
