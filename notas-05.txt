@@ -1,0 +1,28 @@
+Mini CRUD - EJERCICIO 01: 
+	- Create, Read, Update, Delete
+	- Model: Personas
+		- {nombre, apellido, edad}
+
+	- Formulario: 
+		- Inputs: nombre, apellido, edad
+
+	- Damos de alta los datos
+	- Guardamos en memoria: un array
+	- Listamos los datos en una tabla
+	- Dos acciones: 
+		- Editar
+			- Seleccionamos el elemento del array
+			- Cargamos ese item en el formulario
+
+		- Eliminar
+			- Eliminamos el elemento del array
+--
+
+- PROBLEMAS A RESOLVER: 
+
+	1. Obtener los datos del formulario y grabarlo en un objeto
+	2. Hacer el push de ese item para dentro de un array y listar en una tabla
+	3. Acciones: 
+		3.1. Seleccionar: Selecciono el elemento de la tabla y cargo los datos dentro del formulario
+		3.2. Eliminar: Selecciono el elemento de la tabla y elimino de la vista y el array
+	4. Escalar la solucion a un codigo modularizado

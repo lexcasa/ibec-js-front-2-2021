@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Agregar la CDN -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<form>
+		<input type="text" name="nombre" id="nombre" placeholder="Nombre">
+		<br>
+		<input type="text" name="apellido" id="apellido" placeholder="Apellido">
+		<br>
+		<input type="number" name="edad" id="edad" placeholder="Edad">
+		<br>
+		<button type="button" id="guardarPersona">Guardar</button>
+	</form>
+	<hr>
+	<table id="personasTabla">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Edad</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+	<script type="text/javascript">
+		let btnGuardar = $("#guardarPersona")
+		let nombre 	   = $("#nombre")
+		let apellido   = $("#apellido")
+		let edad 	   = $("#edad")
+		let tblPersonas= $("#personasTabla")
+
+		let personas   = []
+		let indice 	   = 0
+
+		btnGuardar.click( function () {
+			indice++
+			let persona = {
+				id: indice,
+				nombre: nombre.val(),
+				apellido: apellido.val(),
+				edad: edad.val()
+			}
+
+			// Agregamos el objeto persona dentro del array de personas
+			personas.push( persona )
+			console.log("Persona ingresada: ", persona)
+			console.log("Personas cargadas en la tabla: ", personas)
+
+			// Encodear el obj javascript
+			// En un string
+			// Ese tipo de notacion se llama JSON
+			let strPersona = JSON.stringify(persona)
+
+			tblPersonas.find("tbody").append(`
+				<tr id="persona-${persona.id}">
+					<td>${persona.nombre}</td>
+					<td>${persona.apellido}</td>
+					<td>${persona.edad}</td>
+					<td>
+						<button onclick='seleccionarPersona(${strPersona})'>Seleccionar</button>
+						<button onclick='eliminarPersona(${persona.id})'>Eliminar</button>
+					</td>
+				</tr>
+			`)
+
+			// EJERCICIO RAPIDO 02
+			// Borrar los datos del formulario luego de insertar un item en la tabla
+
+			// EJERCICIO RAPIDO 03
+			// Si selecciono un iteme de la tabla
+			// Al guardar que remplace al elemento seleccionado
+			// Con la informacion nueva
+		})
+
+		let seleccionarPersona = function (persona){
+			console.log("persona obj: ", persona)
+
+			nombre.val( persona.nombre )
+			apellido.val( persona.apellido )
+			edad.val( persona.edad )
+		}
+
+		let eliminarPersona = function (id){
+			$("#persona-"+id).remove()
+			// EJERCICIO RAPIDO 01
+			// Eliminar el elemento dentro del array
+		}
+	</script>
+</body>
+</html>
