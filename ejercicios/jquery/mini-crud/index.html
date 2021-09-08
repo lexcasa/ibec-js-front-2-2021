@@ -7,6 +7,7 @@
 </head>
 <body>
 	<form>
+		<input type="hidden" id="identificador">
 		<input type="text" name="nombre" id="nombre" placeholder="Nombre">
 		<br>
 		<input type="text" name="apellido" id="apellido" placeholder="Apellido">
@@ -32,12 +33,17 @@
 		let nombre 	   = $("#nombre")
 		let apellido   = $("#apellido")
 		let edad 	   = $("#edad")
+		let identificador = $("#identificador")
 		let tblPersonas= $("#personasTabla")
 
 		let personas   = []
 		let indice 	   = 0
 
 		btnGuardar.click( function () {
+			// EJERCICIO RAPIDO 04
+			// Obtener un objeto persona generico - sin contar el id (por que el id es fijo)
+			// Que aumente su estructura en funcion de los inputs que tenga el formulario
+			
 			indice++
 			let persona = {
 				id: indice,
@@ -46,39 +52,81 @@
 				edad: edad.val()
 			}
 
+			// EJERCICIO RAPIDO 03
+			// Si selecciono un item de la tabla
+			// Al guardar que remplace al elemento seleccionado
+			// Con la informacion nueva
+
+			// Verificamos el identificador
+			if(identificador.val() != ""){
+				let oldId = identificador.val()
+
+				// Si no es vacio entonces estoy editando una persona
+				// Eliminamos el tr anterior
+				// eliminarPersona(oldId)
+
+				// Insertamos una persona nueva
+				// Pero con la id vieja
+				persona.id = oldId
+
+				// Ese tipo de notacion se llama JSON
+				let strPersona = JSON.stringify(persona)
+
+				$("#persona-"+oldId).replaceWith( 
+					trBody(persona)
+				)
+
+				// Remplazar dentro de personas el objeto modificado
+				personas.map( function (item, i){
+					if(item.id == oldId){
+						personas[i] = persona
+					}
+				})
+
+				restablecerCampos()
+
+				return;
+			}
+
 			// Agregamos el objeto persona dentro del array de personas
 			personas.push( persona )
-			console.log("Persona ingresada: ", persona)
-			console.log("Personas cargadas en la tabla: ", personas)
 
 			// Encodear el obj javascript
 			// En un string
 			// Ese tipo de notacion se llama JSON
 			let strPersona = JSON.stringify(persona)
 
-			tblPersonas.find("tbody").append(`
-				<tr id="persona-${persona.id}">
-					<td>${persona.nombre}</td>
-					<td>${persona.apellido}</td>
-					<td>${persona.edad}</td>
-					<td>
-						<button onclick='seleccionarPersona(${strPersona})'>Seleccionar</button>
-						<button onclick='eliminarPersona(${persona.id})'>Eliminar</button>
-					</td>
-				</tr>
-			`)
+			tblPersonas.find("tbody").append( 
+				trBody(persona) 
+			)
 
 			// EJERCICIO RAPIDO 02
 			// Borrar los datos del formulario luego de insertar un item en la tabla
+			restablecerCampos()
+
+		})
+
+		let trBody = function (obj){
+			let strPersona = JSON.stringify(obj)
+			return `
+				<tr id="persona-${obj.id}">
+					<td>${obj.nombre}</td>
+					<td>${obj.apellido}</td>
+					<td>${obj.edad}</td>
+					<td>
+						<button onclick='seleccionarPersona(${strPersona})'>Seleccionar</button>
+						<button onclick='eliminarPersona(${obj.id})'>Eliminar</button>
+					</td>
+				</tr>
+			`
+		}
+
+		let restablecerCampos = function (){
 			nombre.val("")
 			apellido.val("")
 			edad.val("")
-
-			// EJERCICIO RAPIDO 03
-			// Si selecciono un item de la tabla
-			// Al guardar que remplace al elemento seleccionado
-			// Con la informacion nueva
-		})
+			identificador.val("")
+		}
 
 		let seleccionarPersona = function (persona){
 			console.log("persona obj: ", persona)
@@ -86,6 +134,7 @@
 			nombre.val( persona.nombre )
 			apellido.val( persona.apellido )
 			edad.val( persona.edad )
+			identificador.val( persona.id )
 		}
 
 		let eliminarPersona = function (id){
