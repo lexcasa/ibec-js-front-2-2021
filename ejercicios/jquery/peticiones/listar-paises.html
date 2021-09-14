@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<title></title>
+</head>
+<body>
+	<!-- t=0 -->
+	<ul id="paises"></ul>
+	<script type="text/javascript">
+		// URL de la API
+		// Devuelve datos con un content-type: application/json
+		// t=1
+		const API = 'https://restcountries.eu/rest/v2/all'
+		let contPaises = $("#paises")
+
+		// t=1
+		let paises = []
+
+		// Hace la peticion GET
+		// Desde el JS
+		
+		// t=d
+		$.get(API).then( function (res){
+			// Si se resuelve 
+			// Devuelve los datos del get
+			console.log("res: ", res)
+			// let paises = res
+			// t=d + 1
+			paises = res
+
+			// Iterar sobre paises
+			// t=d + 2
+			paises.map( function (item) {
+				// Dentro del UL de paises
+				// Vamos ingresando los li
+				// Con los nombres de los paises que encuentre en la lista
+				contPaises.append(`
+					<li>${item.name}</li>
+				`)
+			})
+
+		}, function (error){
+			// Si da error
+			// Devuelve el error encontrado
+			console.log("error: ", error)
+		})
+
+		// t=2
+		/*paises.map( function (item) {
+			// Dentro del UL de paises
+			// Vamos ingresando los li
+			// Con los nombres de los paises que encuentre en la lista
+			contPaises.append(`
+				<li>${item.name}</li>
+			`)
+		})*/
+	
+		
+	</script>
+	<!-- 
+		Referencias de peticiones dentro de jQuery:
+		https://www.w3schools.com/jquery/jquery_ajax_get_post.asp
+	 -->
+</body>
+</html>
