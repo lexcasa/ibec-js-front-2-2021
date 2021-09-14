@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<title></title>
+</head>
+<body>
+	<ul id="paises"></ul>
+	<script type="text/javascript">
+		const API = 'https://restcountries.eu/rest/v2/name/uruguay'
+		let contPaises = $("#paises")
+
+		$.get(API).then( function (res){
+			let pais = res
+
+			contPaises.append(`
+				<li>${pais[0].capital}</li>
+			`)
+			
+			console.log("resultado: ", res)
+		})
+	</script>
+</body>
+</html>
