@@ -1,0 +1,78 @@
+Mini CRUD contra una API
+
+	- Enviar y consumir data desde un servidor (API)
+		- Obtener datos
+		- Enviar: Crear/Editar 
+		- Eliminar datos
+
+	- Modelo de datos: 
+
+		{
+			"nombre":"Alex",
+			"apellido":"Casadevall",
+			"edad":29
+		}
+
+
+	Utilizar el protocolo HTTP para comunicarnos con el servidor (API)
+		- HTTP Verbose
+			- Son metodos de comunicacion
+				- GET
+				- POST 
+				- PUT 
+				- DELETE
+
+			- GET Obtener datos de una API
+				- URL
+				-> Pedir a traves de una URL los datos	
+		--- 
+
+			Peticion / Request
+
+				- Metodo: GET
+				- Request URL: www.w3schools.com
+
+				---
+
+			Respuesta / Response
+
+				- Datos con un tipo de documento
+
+					- data: HTML
+					- document: HTML
+						- content-type: text/html
+		---
+
+		Request: 
+
+			- Metodo: GET
+			- Request URL: api.com/personas
+
+		Response:
+
+			JSON: javascript object notation
+			data: [
+				{
+					"nombre":"Alex",
+					...
+				},
+				{
+					"nombre":"Juan",
+					...
+				}
+			]
+
+			document: json
+				- content-type: application/json
+
+ 	EJEMPLO:
+ 		- Listar todos los paises desde una API publica
+ 		- Y mostrarlos en una tabla
+ 		
+ 	------
+ 	
+ 	EJERCICIO RAPIDO 01:
+
+ 		- API: https://restcountries.eu/rest/v2/name/<nombre-pais>
+ 		1. Traer en un item de una lista (ul, li) la capital de Uruguay
+ 		   Ejemplo: https://restcountries.eu/rest/v2/name/uruguay
