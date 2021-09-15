@@ -7,20 +7,43 @@
 	<title></title>
 </head>
 <body>
+	<h2>Buscar capitales por pais</h2>
+	<form>
+		<input type="text" id="paisNombre">
+		<button id="buscarBtn" type="button">Buscar</button>
+	</form>
+	<hr>
 	<ul id="paises"></ul>
+	<hr>
+	<button id="borrarResultados">Borrar resultados</button>
 	<script type="text/javascript">
-		const API = 'https://restcountries.eu/rest/v2/name/uruguay'
+		const API = 'https://restcountries.eu/rest/v2/name/'
 		let contPaises = $("#paises")
+		let paisNombre = $("#paisNombre")
+		let btnBuscar  = $("#buscarBtn")
+		let btnBorrar  = $("#borrarResultados")
 
-		$.get(API).then( function (res){
-			let pais = res
+		let buscarPais = function (){
+			let url = API + paisNombre.val()
 
-			contPaises.append(`
-				<li>${pais[0].capital}</li>
-			`)
-			
-			console.log("resultado: ", res)
+			$.get(url).then( function (res){
+				let pais = res
+
+				contPaises.append(`
+					<li>${pais[0].capital}</li>
+				`)
+
+				console.log("resultado: ", res)
+			})
+		}
+
+		btnBuscar.click( buscarPais )
+
+		btnBorrar.click( function (){
+			contPaises.html("")
 		})
+
+		
 	</script>
 </body>
 </html>
