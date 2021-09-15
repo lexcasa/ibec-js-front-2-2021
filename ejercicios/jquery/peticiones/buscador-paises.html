@@ -23,14 +23,20 @@
 		let btnBuscar  = $("#buscarBtn")
 		let btnBorrar  = $("#borrarResultados")
 
+		let ind = 0
+
 		let buscarPais = function (){
 			let url = API + paisNombre.val()
+
+			ind++ 
 
 			$.get(url).then( function (res){
 				let pais = res
 
 				contPaises.append(`
-					<li>${pais[0].capital}</li>
+					<li id="ind-${ind}">${pais[0].capital}
+						<button onclick="eliminarItem(${ind})">Eliminar</button>
+					</li>
 				`)
 
 				console.log("resultado: ", res)
@@ -42,6 +48,10 @@
 		btnBorrar.click( function (){
 			contPaises.html("")
 		})
+
+		let eliminarItem = function (id){
+			$("#ind-" + id).remove()
+		}
 
 		
 	</script>
