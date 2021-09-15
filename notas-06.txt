@@ -68,7 +68,7 @@ Mini CRUD contra una API
  	EJEMPLO:
  		- Listar todos los paises desde una API publica
  		- Y mostrarlos en una tabla
- 		
+
  	------
  	
  	EJERCICIO RAPIDO 01:
@@ -76,3 +76,14 @@ Mini CRUD contra una API
  		- API: https://restcountries.eu/rest/v2/name/<nombre-pais>
  		1. Traer en un item de una lista (ul, li) la capital de Uruguay
  		   Ejemplo: https://restcountries.eu/rest/v2/name/uruguay
+
+ 		2. Agregar un input type text y un boton "Buscar"
+ 			2.1 Al dar clic en "Buscar" obtengo el texto del input y 
+ 				hago la peticion a la API
+ 			2.2 Agregar un boton al final para Borrar la busqueda
+
+ 		3. Agregamos un boton de eliminar en c/item que agregamos a la lista
+ 			3.1 Si le damos clic en eliminar que me borre el item de la lista
+ 			3.2 Que no se repita las capitales ingresadas
+ 			3.3 si borre una capital y la ingreso de nuevo que me lo permita
+ 	----
