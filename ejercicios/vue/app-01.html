@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js" integrity="sha512-lTLt+W7MrmDfKam+r3D2LURu0F47a3QaW5nF0c6Hl0JDZ57ruei+ovbg7BrZ+0bjVJ5YgzsAWE+RreERbpPE1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
@@ -11,38 +12,48 @@
 	 -->
 	<div id="app">
 		<h2>{{title}}</h2>
-		<form>
-			<input type="text" v-model="busqueda">
-			<button type="button" v-on:click="verBusqueda()">Buscar</button>
-		</form>
+		<busqueda-capital></busqueda-capital>
 		<ul>
+			<li>Paises: </li>
+			<!-- Primero el nombre de paises -->
 			<li v-for="pais in paises" :key="pais.name">
-				{{pais.name}}
+				{{pais.country}}
+				<ul>
+					<!-- Cargar las ciudades por pais -->
+					<li v-for="ciudad in pais.cities">
+						{{ciudad}}
+					</li>
+				</ul>
 			</li>
 		</ul>
+		<!-- Llamo al componente custom
+			dentro de nuestra aplicacion
+		 -->
+		<hola-mundo></hola-mundo>
 	</div>
+	<script type="text/javascript" src="buscarcapital.component.js"></script>
+	<script type="text/javascript" src="holamundo.component.js"></script>
+	
 	<script type="text/javascript">
+		const API = 'https://countriesnow.space/api/v0.1/countries'
+
 		let app = new Vue({
 		  el: '#app',
 		  data: {
 		    title: 'Buscar capitales por pais',
-		   	busqueda: '',
-		   	paises: [
-		   		{name: "Uruguay"},
-		   		{name: "Argentina"},
-		   		{name: "Brasil"}
-		   	]
+		   	paises: [],
 		  },
-		  // Vamos a definir las funciones de mi aplicacion
-		  methods: {
-		  	verBusqueda: function (){
-		  		console.log(this.busqueda)
-		  	}
+		  components: {
+		  	'hola-mundo': HolaMundo,
+		  	'busqueda-capital': BuscadorCapital
 		  },
 		  // Se va a ejecutar cuando termine de cargar 
 		  // Nuestro componente de la aplicacion
 		  mounted: function () {
-		  	
+		  	/*axios.get(API).then( (success) => {
+		  		console.log("success: ", success)
+		  		this.paises = success.data.data
+		  	})*/
 		  }
 		})
 	</script>
