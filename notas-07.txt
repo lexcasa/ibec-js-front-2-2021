@@ -12,7 +12,7 @@
 
 	-> CDN en nuestra app de vue
 
-	EJERCICIO: Buscador de paises
+	EJERCICIO: Buscador de capitales
 
 		1. Input con clic en boton buscar
 		2. El texto del input hacia una peticion hacia la API
@@ -28,3 +28,7 @@
 		1. Crear una app en vue que despliegue Nombre y Apellido
 		2. Crear una app en vue que despliegue la lista de capitales en un ul, li
 			- Montevideo, Brasilia, Buenos Aires, Asuncion
+
+	EJERCICIO RAPIDOS: 
+
+		1. Hacer un componente en VUE que muestre nombre y apellido
