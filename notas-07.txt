@@ -1,0 +1,30 @@
+- Setup de la APP en VUE: 
+	-> Servidor web
+		-> Wamp server, Xampp
+		-> http-server
+			-> Pre-requisitos: nodejs, npm
+			-> npm i -g http-server (donde -g hace referencia a una instalacion global)
+			-> Correr el servidor web con: http-server -p 8080 -c-1
+				-> Dentro del powershell
+				-> Obs: Problema de seguridad de linea de comando de windows
+					-> Correr como administrador el powershell y ejecutar
+					-> Set-ExecutionPolicy RemoteSigned
+
+	-> CDN en nuestra app de vue
+
+	EJERCICIO: Buscador de paises
+
+		1. Input con clic en boton buscar
+		2. El texto del input hacia una peticion hacia la API
+		3. Devolvia el resultado y listaba en un ul, li
+
+
+	Capturar datos del HTML
+		CICLO: Vue APP <---> [HTML: v-model] <- [v-on:click] -> UI Interaction
+
+
+	EJERCICIOS RAPIDOS: 
+
+		1. Crear una app en vue que despliegue Nombre y Apellido
+		2. Crear una app en vue que despliegue la lista de capitales en un ul, li
+			- Montevideo, Brasilia, Buenos Aires, Asuncion
