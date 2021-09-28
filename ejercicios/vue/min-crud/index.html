@@ -32,7 +32,7 @@
 					<td>{{producto.precio}}</td>
 					<td>
 						<button v-on:click="selectProducto(producto)">Seleccionar</button>
-						<button>Eliminar</button>
+						<button v-on:click="eliminarProducto(producto._id)">Eliminar</button>
 					</td>
 				</tr>
 			</tbody>
@@ -80,6 +80,13 @@
 			methods: {
 				selectProducto: function (producto){
 					this.producto = copy(producto)
+				},
+				eliminarProducto: function(id){
+					this.productos.map( (item, i) => {
+						if(item._id == id){
+							this.productos.splice(i,1)
+						}
+					})
 				}
 			}
 		})
