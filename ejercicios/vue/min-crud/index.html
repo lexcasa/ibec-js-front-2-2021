@@ -43,13 +43,15 @@
 			<br>
 			<input type="number" name="precio" placeholder="Precio" v-model="producto.precio">
 			<br>
-			<button type="button">Guardar</button>
+			<button type="button" v-on:click="guardaProducto()">Guardar</button>
 		</form>
 	</div>
 	<script type="text/javascript">
 		const copy = function (obj){
 			return JSON.parse( JSON.stringify(obj) )
 		}
+		let lastItem = 3
+
 		const app = new Vue({
 			el: '#app',
 			data: {
@@ -74,7 +76,7 @@
 				producto: {
 					_id: 0,
 					nombre: '',
-					precio: 0
+					precio: ''
 				}
 			},
 			methods: {
@@ -87,6 +89,28 @@
 							this.productos.splice(i,1)
 						}
 					})
+				},
+				guardaProducto: function (){
+					lastItem++
+					let prod = copy(this.producto)
+
+					if(this.producto._id == 0){
+						prod._id = lastItem
+						this.productos.push(prod)
+					} else {
+						this.productos.map( (item, i) => {
+							if(item._id == prod._id){
+								// this.productos[i] = prod
+								this.$set(this.productos, i, prod)
+							}
+						})
+						console.log("this.productos: ", this.productos)
+					}
+					this.producto = {
+						_id: 0,
+						nombre: '',
+						precio: ''
+					}
 				}
 			}
 		})
